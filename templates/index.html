@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../..{{ url_for('static', filename='reporte.css') }}">
+    <title>Reporte</title>
+</head>
+<body>
+    <h1>Santiago Julian Barrera Reyes -- 201905884</h1>
+    <table class="center" id="tabla">
+        <tr class="table_header">
+            <h1 class="table_cell">Tabla de Productos Ordenados de Mayor a Menor</h1>
+            <th class="table_cell">Producto</th>
+            <th class="table_cell">Precio Unitario</th>
+            <th class="table_cell">Cantidad</th>
+            <th class="table_cell">Total</th>
+        </tr>
+        {% for row in producto %}
+        <tr class="table_row">
+            {% for cell in row %}
+            <td class="table_cell">{{ cell }}</td>
+            {% endfor %}
+        </tr>
+        {% endfor %}
+    </table>
+    <h1>Tabla de Producto Mas y Menos vendido</h1>
+    <table class="center" id="tabla">
+        <tr class="table_header">
+            <th class="table_cell">Rango</th>
+            <th class="table_cell">Producto</th>
+            <th class="table_cell">Precio Unitario</th>
+            <th class="table_cell">Cantidad</th>
+            <th class="table_cell">Total</th>
+        </tr>
+        <tr class="table_row">
+            <th>Producto Mas Vendido</th>
+            {% for p_m in mayor %}
+            <td class="table_cell">{{ p_m }}</td>
+            {% endfor %}
+        </tr>
+        <tr class="table_row">
+            <th>Producto Menos Vendido</th>
+            {% for p_nm in menor %}
+            <td class="table_cell">{{ p_nm }}</td>
+            {% endfor %}
+        </tr>
+        <th></th>
+    </table>
+</body>
+</html>

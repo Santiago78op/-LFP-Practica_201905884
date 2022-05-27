@@ -1,0 +1,25 @@
+
+* {
+    color: lightsalmon; 
+}
+
+.table_header{
+    text-align: center;
+}
+
+.table_row:nth-child(even){
+    background-color: #00FA9A;
+}
+
+.table_cell{
+    padding: 8px;
+}
+
+h1{
+    text-align: center;
+}
+
+#tabla{
+    margin: auto;
+}
+
